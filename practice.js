@@ -28,12 +28,15 @@
 */
 
 // Code Here 
+var first = function(arr, cb){
+  cb(arr[0])
+};
 
 // Do not edit the code below.
 var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan'];
 
 first(names, function(firstName){
-  console.log('The first name in names is ' + firstName);
+  // console.log('The first name in names is ' + firstName);
   return firstName;
 });
 // Do not edit the code above.
@@ -49,9 +52,13 @@ first(names, function(firstName){
 
 //Code Here
 
+var last = function(arr, cb){
+  cb(arr[arr.length-1])
+};
+
 // Do not edit the code below.
 last(names, function(lastName){
-  console.log('The last name in names is ' + lastName);
+  // console.log('The last name in names is ' + lastName);
   return lastName;
 });
 // Do not edit the code above.
@@ -66,6 +73,10 @@ last(names, function(lastName){
 */
 
 //Code Here
+
+var multiply = function(num1, num2, cb){
+  cb(num1 * num2)
+};
 
 // Do not edit the code below.
 multiply(4, 3, function(answer){
@@ -85,6 +96,16 @@ multiply(4, 3, function(answer){
 */
 
 //Code Here 
+
+var contains = function(arr, name, cb){
+  if(arr.includes(name) ){
+    cb(true)
+  } else {
+    cb( false)
+  }
+};
+
+
 
 // Do not edit the code below.
 contains(names, 'Colt', function(result){
@@ -107,6 +128,14 @@ contains(names, 'Colt', function(result){
 
 //Code Here
 
+function uniq(arr, cb){
+  let newArr = arr.filter((h, i) => arr.indexOf(h) === i);
+
+  cb(newArr)
+  
+  }
+
+
 // Do not edit the code below.
 uniq(names, function(uniqArr){
   console.log('The new names array with all the duplicate items removed is ', uniqArr);
@@ -124,6 +153,13 @@ uniq(names, function(uniqArr){
 
 //Code Here 
 
+function each(arr, cb){
+  arr.forEach(function(item){
+    cb(item, arr.indexOf(item))
+  })
+};
+
+
 // Do not edit the code below.
 each(names, function(item, indice){
   console.log('The item in the ' + indice + ' position is ' + item)
@@ -140,6 +176,18 @@ each(names, function(item, indice){
 */
 
 // Code here
+
+function getUserById(arr, id, cb){
+  
+    for( let i = 0; i < arr.length; i++ ){
+      arr.filter(function(user){
+        if( user.id === id ){
+        }
+        cb(user)
+      })
+      }
+};
+
 
 // Do not edit the code below.
 var users = [
